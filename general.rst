@@ -11,14 +11,17 @@ Some data fields are present for any disaster information type. Those are:
 * Date of initial report
 * Location (point)
 * Location (polygons) (several, optional)
-* Images (several, optional)
-* Documents (several, optional)
+* Image Files (several, optional)
+* PDF Documents (several, optional)
 * Additional information (free text, optional)
 * Reporter information
 * Severity and Urgency (different concepts, but mobile4d only asks for oneof them, as people usually can’t distinguish them anyway)
 * Contact telephone number (can be different from reporter’s number)
 
 **Implementation:** Setting urgency/severity from the web frontend has been accidently omitted in the current implementation.
+
+**Note:** A subset of the data fields correspond to the Common Alerting Protocal (CAP) data fields. Some fields are additional, some CAP fields are not covered. However, CAP import/export is possible.
+
 
 Reports
 -------
