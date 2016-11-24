@@ -70,7 +70,7 @@ Any administrative user has the possibility to assign himself/herself as "respon
 
 **Implementation**: Responsible persons are not shown in the mobile app.
 
-.. todo:: Verify the missing Android implmentation
+.. todo:: Verify the missing Android implementation
 
 
 
