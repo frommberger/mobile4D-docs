@@ -86,3 +86,11 @@ The idea is to have the user updated about a fixed location of his interest with
 **Implementation:** Current location is updated in fixed intervals in the mobile app. High precision is not needed. Basically, an update triggers an updated subscription to a notification topic.
 
 **Bugs:** Changing the home location in the web interface is not synced to the mobile client.
+
+
+Tutorials
+---------
+
+Disaster specific tutorials are simply PDF files that can be attached to any disaster report. In addition to that, the mobile4D app has a section for "Tutorials" that are meant as some general download section and simply points to a HTTP resource offering PDF files.
+
+**Implementation:** When PRAM KSN was still up and running, the app pointed to the PRAM KSN download section. As of now, the section is empty.
