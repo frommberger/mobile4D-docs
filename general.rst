@@ -50,10 +50,10 @@ To account for both types of verifications, mobile4D tracks every single verific
 
 **Current implementation:** The number of verifications and the highest administrative verification rank are shown. A push notification on "verified" is possible, but currenly disabled.
 
-**See also:** `Acknowledgement / "Seen"`_
+**See also:** `Acknowledgement / Seen`_
 
 
-Acknowledgement / ”Seen”
+Acknowledgement / Seen
 ------------------------
 
 mobile4D reports have a field for being ”seen”, that is, for being acknowledged. A report is auto- matically marked seen as soon as a administrative user (district or higher) has read the report.
@@ -70,11 +70,20 @@ Any administrative user has the possibility to assign himself/herself as "respon
 
 **Implementation**: Responsible persons are not shown in the mobile app.
 
+**Note:** Responsible persons for a disaster should not be confused with `Officials`_ (which are responsible for an administrative entity).
+
 .. todo:: Verify the missing Android implementation
 
 
 
+Officials
+---------
 
+If a user is assigned a department (via the web frontend), he/she is regarded as an "offcial" for this entity (district/province). Offcials are shown prominently based on location (or home location).
+
+**Implementation:** Officials are not shown in the web frontend (besides administrative area).
+
+**See also:** `Responsible Persons`_
 
 
 
@@ -84,11 +93,12 @@ Current Location and Home Location
 
 Generally, every user has two location properties: *current location* and *home location*. While current location is determined from the position of the mobile device, home location is a property that can be set within the app or web settings.
 
-The idea is to have the user updated about a fixed location of his interest without him having to worry about manual subscriptions. The assumption is that everybody would care about his/her home locattion.
+The idea of home location is to have the user updated about a fixed location of his interest without him having to worry about manual subscriptions. The assumption is that everybody would care about his/her home locattion.
 
-**Implementation:** Current location is updated in fixed intervals in the mobile app. High precision is not needed. Basically, an update triggers an updated subscription to a notification topic.
 
-**Bugs:** Changing the home location in the web interface is not synced to the mobile client.
+**Implementation:** Current location is updated in fixed intervals in the mobile app. High precision is not needed. Basically, an update triggers an updated subscription to a notification topic. Current update frequency is very high, but should be lowered in productive use.
+
+**Bugs:** Changing the home location in the web interface is not synced to the mobile client. Apparently, there is no syncing mechanism for user data yet.
 
 
 Tutorials
