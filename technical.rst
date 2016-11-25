@@ -6,12 +6,17 @@ Low-bandwidth Connectivity
 
 mobile4D transmits the lowest amount of data possible to save bandwidth costs. Interrupted connections must be expected and taken into account.
 
-**Implementation:**
+Concepts
+^^^^^^^^
  * Pictures are scaled down to a reasonable minumum.
  * Information is sent in batches, to make sure at least the first batch makes it to the destination server.
  * Important information is sent first.
+ * Compression
 
-**Note:** Checksums have not shown to be successful, see Andreas Kästner's bachelor thesis.
+ **Implementation:** Compression is not implemented currently, neither for push nor data transmission.
+
+
+**Note:** Checksums for checking if a report has changed remotely have not shown to be successful, see Andreas Kästner's bachelor thesis.
 
 **See also:** `Offline Functionality`_
 

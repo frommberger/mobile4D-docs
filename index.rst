@@ -17,9 +17,8 @@ Contents:
 
 
 
-Indices and tables
+Search Document
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
+.. * :ref:`genindex`
 * :ref:`search`
