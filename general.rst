@@ -23,6 +23,20 @@ Some data fields are present for any disaster information type. Those are:
 **Note:** A subset of the data fields correspond to the Common Alerting Protocal (CAP) data fields. Some fields are additional, some CAP fields are not covered. However, CAP import/export is possible.
 
 
+
+Current Location and Home Location
+----------------------------------
+
+Generally, every user has two location properties: *current location* and *home location*. While current location is determined from the position of the mobile device, home location is a property that can be set within the app or web settings.
+
+The idea of home location is to have the user updated about a fixed location of his interest without him having to worry about manual subscriptions. The assumption is that everybody would care about his/her home locattion.
+
+
+**Implementation:** Current location is updated in fixed intervals in the mobile app. High precision is not needed. Basically, an update triggers an updated subscription to a notification topic. Current update frequency is very high, but should be lowered in productive use.
+
+**Bugs:** Changing the home location in the web interface is not synced to the mobile client. Apparently, there is no syncing mechanism for user data yet.
+
+
 Reports
 -------
 
@@ -35,6 +49,9 @@ Due to misunderstandings, report updates might be called ”notifications” in 
 Updating disaster information sets from the mobile app is currently not possible. Adding comments and media is, but not changing values.
 
 **See also:** `Disaster Information`_
+
+
+
 
 
 Verification
@@ -81,24 +98,32 @@ Officials
 
 If a user is assigned a department (via the web frontend), he/she is regarded as an "offcial" for this entity (district/province). Offcials are shown prominently based on location (or home location).
 
-**Implementation:** Officials are not shown in the web frontend (besides administrative area).
+**Implementation:** Officials are not shown in the web frontend (besides administrative area). In the mobile app, officials are a top level menu entry, showing names, affiliation,
 
-**See also:** `Responsible Persons`_
-
-
+**See also:** `Responsible Persons`_+
 
 
-Current Location and Home Location
-----------------------------------
+User Roles
+----------
 
-Generally, every user has two location properties: *current location* and *home location*. While current location is determined from the position of the mobile device, home location is a property that can be set within the app or web settings.
+User roles define which permissions a user has. The mobile4D system aims at being not fine-grained to avoid permission problems and testing overhead. Basically, there are only three types of user roles, which are bound to the administrative level of the user.
 
-The idea of home location is to have the user updated about a fixed location of his interest without him having to worry about manual subscriptions. The assumption is that everybody would care about his/her home locattion.
+1. Guests, who can only read/write
+2. Logged in users, who are also able to send and update disaster reports
+3. Users with an administrative authority (district level upwards) who can perform administrative tasks on reports (closing, merging, assigning responsibilities, etc.)
+
+In addition, there is also an "administrator" user role, that is not bound to an administrative level and allows administration of the user database.
+
+**Implementation:** In addition to "administrator", the roles "disaster coordinator", "mobile4D", and "smsauthority" are defined. It is dubious what their role is.
+
+.. todo:: Check user roles
 
 
-**Implementation:** Current location is updated in fixed intervals in the mobile app. High precision is not needed. Basically, an update triggers an updated subscription to a notification topic. Current update frequency is very high, but should be lowered in productive use.
 
-**Bugs:** Changing the home location in the web interface is not synced to the mobile client. Apparently, there is no syncing mechanism for user data yet.
+
+
+
+
 
 
 Tutorials
