@@ -15,8 +15,10 @@ Some data fields are present for any disaster information type. Those are:
 * PDF Documents (several, optional)
 * Additional information (free text, optional)
 * Reporter information
-* Severity and Urgency (different concepts, but mobile4d only asks for oneof them, as people usually can’t distinguish them anyway)
+* Severity and Urgency (different concepts, but mobile4d only asks for one of them, as people usually can’t distinguish them anyway)
 * Contact telephone number (can be different from reporter’s number)
+
+Every disaster report has an individual unique URI.
 
 **Implementation:** Setting urgency/severity from the web frontend has been accidently omitted in the current implementation.
 
@@ -121,14 +123,25 @@ In addition, there is also an "administrator" user role, that is not bound to an
 
 
 
-
-
-
-
-
 Tutorials
 ---------
 
 Disaster specific tutorials are simply PDF files that can be attached to any disaster report. In addition to that, the mobile4D app has a section for "Tutorials" that are meant as some general download section and simply points to a HTTP resource offering PDF files.
 
 **Implementation:** When PRAM KSN was still up and running, the app pointed to the PRAM KSN download section. As of now, the section is empty.
+
+
+Outlets and interfaces
+----------------------
+
+mobile4D supports several outlet channels:
+
+ * Push notifications (to mobile client and website)
+ * RSS feed
+ * Twitter feed
+ * CAP feed (Common Alerting Protocol)
+ * SMS
+
+CAP, as an ISO standard, is meant to provide an interchange format to other systems and interfaces.
+
+**Implementation:** Push is implemented through MQTT (moquette), SMS uses FrontlineSMS. SMS is currently disabled (it used Michaels private phone). Facebook outlet could be coupled to Twitter (however, not fully reliable).
