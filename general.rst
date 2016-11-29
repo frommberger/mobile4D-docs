@@ -8,35 +8,24 @@ Disaster Information
 Some data fields are present for any disaster information type. Those are:
 
 
-* Date of initial report
+* Date/time of report
 * Location (point)
 * Location (polygons) (several, optional)
 * Image Files (several, optional)
 * PDF Documents (several, optional)
 * Additional information (free text, optional)
 * Reporter information
-* Severity and Urgency (different concepts, but mobile4d only asks for one of them, as people usually can’t distinguish them anyway)
+* Severity and Urgency (different concepts, but mobile4d only asks for one of them, as people usually can’t distinguish them anyway).
 * Contact telephone number (can be different from reporter’s number)
 
 Every disaster report has an individual unique URI.
 
-**Implementation:** Setting urgency/severity from the web frontend has been accidently omitted in the current implementation.
+**Implementation:** Setting urgency/severity from the web frontend has been accidently omitted in the current implementation. The traffic light metaphor usually works well for urgency etc.
 
-**Note:** A subset of the data fields correspond to the Common Alerting Protocal (CAP) data fields. Some fields are additional, some CAP fields are not covered. However, CAP import/export is possible.
-
-
-
-Current Location and Home Location
-----------------------------------
-
-Generally, every user has two location properties: *current location* and *home location*. While current location is determined from the position of the mobile device, home location is a property that can be set within the app or web settings.
-
-The idea of home location is to have the user updated about a fixed location of his interest without him having to worry about manual subscriptions. The assumption is that everybody would care about his/her home locattion.
+**Note:** A subset of the data fields correspond to the Common Alerting Protocal (CAP) data fields. Some fields are additional, some CAP fields are not covered ("certainty", e.g., is completely omitted). However, CAP import/export is possible.
 
 
-**Implementation:** Current location is updated in fixed intervals in the mobile app. High precision is not needed. Basically, an update triggers an updated subscription to a notification topic. Current update frequency is very high, but should be lowered in productive use.
 
-**Bugs:** Changing the home location in the web interface is not synced to the mobile client. Apparently, there is no syncing mechanism for user data yet.
 
 
 Reports
@@ -53,6 +42,17 @@ Updating disaster information sets from the mobile app is currently not possible
 **See also:** `Disaster Information`_
 
 
+Current Location and Home Location
+----------------------------------
+
+Generally, every user has two location properties: *current location* and *home location*. While current location is determined from the position of the mobile device, home location is a property that can be set within the app or web settings.
+
+The idea of home location is to have the user updated about a fixed location of his interest without him having to worry about manual subscriptions. The assumption is that everybody would care about his/her home locattion.
+
+
+**Implementation:** Current location is updated in fixed intervals in the mobile app. High precision is not needed. Basically, an update triggers an updated subscription to a notification topic. Current update frequency is very high, but should be lowered in productive use.
+
+**Bugs:** Changing the home location in the web interface is not synced to the mobile client. Apparently, there is no syncing mechanism for user data yet.
 
 
 
@@ -141,6 +141,7 @@ mobile4D supports several outlet channels:
  * Twitter feed
  * CAP feed (Common Alerting Protocol)
  * SMS
+ * Email
 
 CAP, as an ISO standard, is meant to provide an interchange format to other systems and interfaces.
 
