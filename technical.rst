@@ -42,13 +42,13 @@ mobile4D must not comsume more battery than needed. There is clearly a tradeoff 
 Server-Client Functionality
 ---------------------------
 
-Internet connectivity to/from Laos can be incredibly bad to a point of broken connections. Thus, the mobile4D server is supposed to run locally.
+Internet connectivity to/from Laos can be incredibly bad to a point of broken connections. Thus, the mobile4D server is supposed to run on a local machine.
 
 
 Push Messaging
 --------------
 
-Push messages are a central concept. Important data is pushed to the clients
+Push messages are a central concept. Important data is pushed to the clients rather than being pulled by them. All notifications rely on Push.
 
 **Implementation**: Push to mobile via MQTT. Alternatively, a downward compatible "Push via IMAP" concept (Info is sent out via mailing lists, mails are picked up as push messages) has been successfull tested (compare Frommberger & Schmid 2014, ISCRAM Asia paper), it is currently disabled though.
 

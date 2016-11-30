@@ -25,21 +25,31 @@ Additional information (free text, optional)
 Reporter
   Name and contact info of the reporter
 Severity, Urgency, Certainty
-  (see below: `Severity, Urgency, Certainty`_)
+  see below: `Severity, Urgency, Certainty`_
 Contact telephone number
   can be different from reporter’s number
 
 Every disaster report has an individual unique URI.
-
-**Implementation:** Setting urgency/severity from the web frontend has been accidently omitted in the current implementation. The traffic light metaphor usually works well for urgency etc.
 
 **Note:** A subset of the data fields correspond to the Common Alerting Protocal (CAP) data fields. Some fields are additional, some CAP fields are not covered ("certainty", e.g., is completely omitted). However, CAP import/export is possible.
 
 
 Severity, Urgency, Certainty
 ----------------------------
-(different concepts, but mobile4d only asks for one of them, as people usually can’t distinguish them anyway).
+Severity, Urgency, and Certainty are different concepts. All of them relate to data fields in the CAP standards.
 
+Severity
+  indicates how severe an incident is (a light or a heavy flooding)
+Urgency
+  indicates how urgent it is to react on the incident
+Certainty
+  indicates a confidence level, how certain the reporter is that the even has happened as described
+
+All experience shows that people are having a hard time to distinguish between the concepty (compare to issue trackers - same thing). Severity and urgency are strongly correlated anyway, and people tend to always put the highest urgency for their own case. Certainty basically is rather a measure for the reporter's self esteem than a quality measure for the report.
+
+**Implementation:** Usually, only one value for urgency and severity is asked for, with a traffic light concept (green/red/yellow). Both fields are set to the same value. Certainty is completely omitted.
+
+**Bugs:** Setting urgency/severity from the web frontend has been accidently forgotten in the current implementation.
 
 Reports
 -------
