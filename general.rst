@@ -54,6 +54,15 @@ The idea of home location is to have the user updated about a fixed location of 
 
 **Bugs:** Changing the home location in the web interface is not synced to the mobile client. Apparently, there is no syncing mechanism for user data yet.
 
+.. todo:: Check this bug
+
+
+Subscription
+------------
+
+Reports can be subscribed to ("starring"). If a user subscribes to a report, he/she will get notifications about this report regardless of his/her locations.
+
+**Bugs:** Starred reports are not synchronized between mobile and web client. Apparently, there is no syncing mechanism for user data yet.
 
 
 Verification
@@ -67,7 +76,9 @@ mobile4D supports multiple verifications. In general, we have two kinds of verif
 
 To account for both types of verifications, mobile4D tracks every single verification. In general, every user can verify any report.
 
-**Current implementation:** The number of verifications and the highest administrative verification rank are shown. A push notification on "verified" is possible, but currenly disabled.
+**Current implementation:** The number of verifications and the highest administrative verification rank are shown. A push notification on "verified" is possible, but currenly disabled. Crowd verification is not implemented yet.
+
+**Note:** As mobile4D has not been rolled out to non-administrative users yet, verification did not play a greater role in the current deployment.
 
 **See also:** `Acknowledgement / Seen`_
 
@@ -145,4 +156,15 @@ mobile4D supports several outlet channels:
 
 CAP, as an ISO standard, is meant to provide an interchange format to other systems and interfaces.
 
-**Implementation:** Push is implemented through MQTT (moquette), SMS uses FrontlineSMS. SMS is currently disabled (it used Michaels private phone). Facebook outlet could be coupled to Twitter (however, not fully reliable).
+**Implementation:** Push is implemented through MQTT (moquette), SMS uses FrontlineSMS. SMS is currently disabled (it used Michael's private phone). Facebook outlet could be coupled to Twitter (however, not fully reliable, especially not real-time).
+
+
+All Info to the Right Desk
+--------------------------
+
+mobile4D wants to make sure that *all* relevant people receive notifications about disaster reports and updates. Those are:
+
+ * People with current or home location in the disaster scope area
+ * The responsible people on district level
+ * The responsible people on province level (to be discussed)
+ * People who subscribed to the disaster report (see `Subscription`_)

@@ -52,7 +52,7 @@ Push messages are a central concept. Important data is pushed to the clients
 
 **Implementation**: Push to mobile via MQTT. Alternatively, a downward compatible "Push via IMAP" concept (Info is sent out via mailing lists, mails are picked up as push messages) has been successfull tested (compare Frommberger & Schmid 2014, ISCRAM Asia paper), it is currently disabled though.
 
-**See also:** `Offline Functionality`_
+**See also:** `Offline Functionality`_, `All Info to the Right Desk`_
 
 
 Independency from Service Providers
