@@ -8,15 +8,26 @@ Disaster Information
 Some data fields are present for any disaster information type. Those are:
 
 
-* Date/time of report
-* Location (point)
-* Location (polygons) (several, optional)
-* Image Files (several, optional)
-* PDF Documents (several, optional)
-* Additional information (free text, optional)
-* Reporter information
-* Severity and Urgency (different concepts, but mobile4d only asks for one of them, as people usually can’t distinguish them anyway).
-* Contact telephone number (can be different from reporter’s number)
+Date/time of incident
+  Timestamp when the incident *occured*
+Date/time of report
+  Timestamp when the report was *issued*
+Location (point)
+  A point-based geolocation
+Location (polygons) (several, optional)
+  A set of polygons to further define the incident area
+Image Files (several, optional)
+  Files as JPG or PNG
+PDF Documents (several, optional)
+  PDF documents (meant as tutorial information mainly)
+Additional information (free text, optional)
+  The usual *anything you would like to add*
+Reporter
+  Name and contact info of the reporter
+Severity, Urgency, Certainty
+  (see below: `Severity, Urgency, Certainty`_)
+Contact telephone number
+  can be different from reporter’s number
 
 Every disaster report has an individual unique URI.
 
@@ -25,7 +36,9 @@ Every disaster report has an individual unique URI.
 **Note:** A subset of the data fields correspond to the Common Alerting Protocal (CAP) data fields. Some fields are additional, some CAP fields are not covered ("certainty", e.g., is completely omitted). However, CAP import/export is possible.
 
 
-
+Severity, Urgency, Certainty
+----------------------------
+(different concepts, but mobile4d only asks for one of them, as people usually can’t distinguish them anyway).
 
 
 Reports
