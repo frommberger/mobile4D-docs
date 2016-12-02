@@ -24,16 +24,21 @@ Text-free (or sparse-text) interfaces are targeted for the mobile client in the 
 
 Avoid numbers
 ^^^^^^^^^^^^^
-Numbers, if crowdsourced, are rarely correct, and rather estimates. mobile4D tries to avoid people to have to give exact number, but rather used text-free interfaces, as the flood-height picker.
+Numbers, if crowdsourced, are rarely correct, and rather estimates. mobile4D tries to avoid people to have to give exact numbers, but rather used text-free interfaces, as the flood-height picker.
+
 
 Exploit prior knowledge
 ^^^^^^^^^^^^^^^^^^^^^^^
+Already gathered knowledge should be used to help system use. Example: "popular" diseases should appear in a dropdown menu to not have people typing "malaria" each time again.
 
+**Implementation:** The app uses autocomplete over already entered fields. Actually, this is not implemented for any disaster type. (Autocomplete is not great anyway.)
 
 
 
 Transparency on data quality
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
 
 Chose the right input at the right time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
