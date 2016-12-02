@@ -69,3 +69,15 @@ mobile4D tries not to rely on such 3rd party services and use open solutions.
 **Implementation:** Push notifications are implemented through MQTT. Maps are taken from Google Maps due to poor coverage of OSM in Laos. SMS through FrontlineSMS.
 
 **See also:** `Push Messaging`_
+
+
+Stability
+---------
+
+The system deals with critical information. Stability and reliability must be top preferences over all others. This includes
+
+ * no data loss, never
+ * no unnecessary delays
+ * no chance of overlooking information
+
+For the app, this also means not to remove from memory or be excluded from notifications.
