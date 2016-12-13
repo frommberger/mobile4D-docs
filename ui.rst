@@ -24,7 +24,7 @@ Text-free (or sparse-text) interfaces are targeted for the mobile client in the 
 
 Avoid numbers
 ^^^^^^^^^^^^^
-Numbers, if crowdsourced, are rarely correct, and rather estimates. mobile4D tries to avoid people to have to give exact numbers, but rather used text-free interfaces, as the flood-height picker.
+Numbers, if crowdsourced, are rarely correct, and rather estimates. mobile4D tries to avoid people to have to give exact numbers, but rather used text-free interfaces, such as the flood-height picker.
 
 
 Exploit prior knowledge
@@ -38,7 +38,14 @@ Already gathered knowledge should be used to help system use. Example: "popular"
 Transparency on data quality
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Always give the user feedback about the state and quality of the data shown. The user should be aware that data could be incomplete or not updated yet. Also, the system should always be transparent on which data has already been sent and which is still in the queue (without bothering the user too much).
 
 
-Chose the right input at the right time
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ **Implementation:** Transparency on the queue is not implemented.
+
+
+
+Chose the right input mode at the right time
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This should go without saying, but experience shows it is not: always choose appropriate input modalities. If only numbers are required, give a numberpad. Give email address keyboards (with @) for email addresses, etc.
